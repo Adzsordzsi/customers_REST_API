@@ -7,7 +7,7 @@ customers[key] = [];
 
 // region Creating costumers
 const consumer1 = {
-
+    name: 'max mustermann',
     address: '1040 Wien Musterstrasse 13',
     birth_date: '1995.02.14',
     email: 'maxmus@gmail.com',
