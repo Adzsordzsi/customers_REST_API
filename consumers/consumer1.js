@@ -18,6 +18,10 @@ const get_response_data = async function () {
 // region Creating result JSON for customer
 const create_result_json = function (response_data) {
 
+    let costumers = {};
+    const key = 'costumers';
+    costumers[key] = [];
+
     for (const consumer_data in response_data.costumers) {
 
         const costumer = response_data.costumers[consumer_data];
@@ -28,9 +32,10 @@ const create_result_json = function (response_data) {
         result['email'] = costumer.email;
         result['status'] = costumer.email;
 
-        console.log(result);
-
+        costumers[key].push(result);
     }
+
+    console.log(costumers);
 }
 // endregion
 
