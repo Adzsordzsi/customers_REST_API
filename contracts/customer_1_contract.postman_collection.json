@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "e6b883fc-c6b6-424b-b119-863c6396cdf7",
+		"name": "customer_1_contract",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24609230"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/costumers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"schema = {",
+							"    \"$schema\": \"https://json-schema.org/draft/2019-09/schema\",",
+							"    \"$id\": \"http://example.com/example.json\",",
+							"    \"type\": \"object\",",
+							"    \"default\": {},",
+							"    \"title\": \"Root Schema\",",
+							"    \"required\": [",
+							"        \"costumers\"",
+							"    ],",
+							"    \"properties\": {",
+							"        \"costumers\": {",
+							"            \"type\": \"array\",",
+							"            \"default\": [],",
+							"            \"title\": \"The costumers Schema\",",
+							"            \"items\": {",
+							"                \"type\": \"object\",",
+							"                \"default\": {},",
+							"                \"title\": \"A Schema\",",
+							"                \"required\": [",
+							"                    \"name\",",
+							"                    \"email\",",
+							"                    \"status\"",
+							"                ],",
+							"                \"properties\": {",
+							"                    \"name\": {",
+							"                        \"type\": \"string\",",
+							"                        \"default\": \"\",",
+							"                        \"title\": \"The name Schema\",",
+							"                        \"examples\": [",
+							"                            \"max mustermann\"",
+							"                        ]",
+							"                    },",
+							"                    \"email\": {",
+							"                        \"type\": \"string\",",
+							"                        \"pattern\": \"^\\\\S+@\\\\S+\\\\.\\\\S+$\",",
+							"                        \"format\": \"email\",",
+							"                        \"default\": \"\",",
+							"                        \"title\": \"The email Schema\",",
+							"                        \"examples\": [",
+							"                            \"maxmus@gmail.com\"",
+							"                        ]",
+							"                    },",
+							"                    \"status\": {",
+							"                        \"type\": \"string\",",
+							"                        \"default\": \"\",",
+							"                        \"enum\": [\"positiv\", \"negativ\"],",
+							"                        \"title\": \"The status Schema\",",
+							"                        \"examples\": [",
+							"                            \"positiv\"",
+							"                        ]",
+							"                    }",
+							"                },",
+							"                \"examples\": [{",
+							"                    \"name\": \"max mustermann\",",
+							"                    \"email\": \"maxmus@gmail.com\",",
+							"                    \"status\": \"positiv\"",
+							"                }]",
+							"            },",
+							"            \"examples\": [",
+							"                [{",
+							"                    \"name\": \"max mustermann\",",
+							"                    \"email\": \"maxmus@gmail.com\",",
+							"                    \"status\": \"positiv\"",
+							"                }]",
+							"            ]",
+							"        }",
+							"    },",
+							"    \"examples\": [{",
+							"        \"costumers\": [{",
+							"            \"name\": \"max mustermann\",",
+							"            \"email\": \"maxmus@gmail.com\",",
+							"            \"status\": \"positiv\"",
+							"        }]",
+							"    }]",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Schema should be correct\", function() {",
+							"    var response = pm.response.json();",
+							"    ",
+							"    var result=tv4.validateResult(response, schema)",
+							"    if(result.error != null)",
+							"    pm.expect(result.error.message).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/costumers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"costumers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

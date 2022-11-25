@@ -1,0 +1,27 @@
+{
+  "name": "customers_rest_api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "service.js",
+  "scripts": {
+    "start_service": "node service.js",
+    "start_consumer1": "node consumers/consumer1.js",
+    "start_consumer2": "node consumers/consumer2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adzsordzsi/customers_REST_API.git"
+  },
+  "author": "Gergoe Adam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adzsordzsi/customers_REST_API/issues"
+  },
+  "homepage": "https://github.com/Adzsordzsi/customers_REST_API#readme",
+  "dependencies": {
+    "axios": "^1.2.0",
+    "newman": "^5.3.2",
+    "request": "^2.88.2"
+  }
+}
