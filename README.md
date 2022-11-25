@@ -96,7 +96,7 @@ The response of consumer 2 should look like this:
   *  balance should be the format: **`number`**
 
 Successfully tested contracts have the output like this:
-``` JSON
+```
 GET http://localhost:8080/costumers [200 OK, 3.7kB, 22ms]
 ✓  Schema should be correct
 
@@ -123,7 +123,7 @@ GET http://localhost:8080/costumers [200 OK, 3.7kB, 22ms]
 ```
 If the contract test fails the output is like this:
 
-``` JSON
+```
 GET http://localhost:8080/costumers [200 OK, 3.68kB, 22ms]
 1. Schema should be correct
 
